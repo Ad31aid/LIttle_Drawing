@@ -1,9 +1,10 @@
 
-//can use instant call function?
-// (function(){}) it runs as soon as it's defined
+        //can use instant call function?
+        // (function(){}) it runs as soon as it's defined
 
 
-//scopting differnce of arrow function?
+        //scopting differnce of arrow function?
+
 window.addEventListener('load', ()=>{
         const canvas = document.querySelector('#canvas');
         const ctx = canvas.getContext('2d')
@@ -13,15 +14,13 @@ window.addEventListener('load', ()=>{
         canvas.width = window.innerWidth
         //setting size of the canvas
 
-
-    
         let painting = false;
 
-         function startingPosition(e){
+        function startingPosition(e){
                 painting = true;  
-                console.log('yep')
-               
-        }
+                draw(e)
+                console.log('yep') 
+                }
 
         function endPosition(e){
                 painting = false
@@ -45,6 +44,27 @@ window.addEventListener('load', ()=>{
         canvas.addEventListener('mousedown', startingPosition)
         canvas.addEventListener('mouseup',  endPosition )
         canvas.addEventListener('mousemove', draw)
+
 })
+//basic canvas drawing function
+console.log(canvas)
+//genrate tool bar
+let toolbar_show = () => {
+        const toolbar_frame = document.createElement('div')
+        toolbar_frame.classList.add = 'toolbar'
+        console.log(canvas)
+        const body = document.querySelector('body')
+        console.log(body)
+        body.appendChild(toolbar_frame)
+}
+
+function toolbar_hide(){
+}
+
+toolbar_show()
 
 
+let button_gen = () =>{
+        let button = document.createElement('button')
+        
+}

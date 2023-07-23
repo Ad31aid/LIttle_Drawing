@@ -24,3 +24,4 @@ a go through of the functionalitiy of the stuff.
 ## Tech stack
 - canvas tag in HTML
 - vue? not now maybe later
+- bootstrap?
