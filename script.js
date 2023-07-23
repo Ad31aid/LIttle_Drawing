@@ -8,10 +8,11 @@
 window.addEventListener('load', ()=>{
         const canvas = document.querySelector('#canvas');
         const ctx = canvas.getContext('2d')
+
         //I think these are the default setting stuff
 
-        canvas.height = window.innerHeight
-        canvas.width = window.innerWidth
+        canvas.height = 700
+        canvas.width = 700
         //setting size of the canvas
 
         let painting = false;
@@ -27,6 +28,7 @@ window.addEventListener('load', ()=>{
                 ctx.beginPath()
                 // I don't understand why does that help
         }
+        let color
 
         function draw(e){
                 if(!painting) return;
@@ -35,6 +37,7 @@ window.addEventListener('load', ()=>{
 
                 ctx.lineTo(e.clientX, e.clientY)
                 ctx.stroke()
+                ctx.strokeStyle = color
                 //path of line?
                 ctx.beginPath()
                 //beginPath I guess
@@ -45,26 +48,29 @@ window.addEventListener('load', ()=>{
         canvas.addEventListener('mouseup',  endPosition )
         canvas.addEventListener('mousemove', draw)
 
-})
-//basic canvas drawing function
-console.log(canvas)
-//genrate tool bar
-let toolbar_show = () => {
+        //genrate tool bar
+
         const toolbar_frame = document.createElement('div')
         toolbar_frame.classList.add = 'toolbar'
         console.log(canvas)
         const body = document.querySelector('body')
         console.log(body)
         body.appendChild(toolbar_frame)
-}
-
-function toolbar_hide(){
-}
-
-toolbar_show()
-
-
-let button_gen = () =>{
-        let button = document.createElement('button')
         
+        const color_set = ['black','red','yellow','blue','purple','green']
+        
+        for(let i = 0; i < color_set.length; i++){
+                let button = document.createElement('button')
+                toolbar_frame.appendChild(button)
+                button.innerHTML = color_set[i]
+                button.setAttribute('id',color_set[i])
+                button.addEventListener('click', () => {
+                        color = color_set[i]
+                })
+        }
 }
+)
+
+
+
+
