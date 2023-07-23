@@ -20,3 +20,7 @@ they can upload to a server?
 and a community can take it?
 
 a go through of the functionalitiy of the stuff.
+
+## Tech stack
+- canvas tag in HTML
+- vue? not now maybe later

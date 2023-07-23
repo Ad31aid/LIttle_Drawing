@@ -19,10 +19,14 @@ window.addEventListener('load', ()=>{
 
          function startingPosition(e){
                 painting = true;  
+                console.log('yep')
+               
         }
 
         function endPosition(e){
                 painting = false
+                ctx.beginPath()
+                // I don't understand why does that help
         }
 
         function draw(e){
@@ -32,10 +36,15 @@ window.addEventListener('load', ()=>{
 
                 ctx.lineTo(e.clientX, e.clientY)
                 ctx.stroke()
+                //path of line?
                 ctx.beginPath()
+                //beginPath I guess
                 ctx.moveTo(e.clientX,e.clientY)
         }
-        
+
+        canvas.addEventListener('mousedown', startingPosition)
+        canvas.addEventListener('mouseup',  endPosition )
+        canvas.addEventListener('mousemove', draw)
 })
 
 
