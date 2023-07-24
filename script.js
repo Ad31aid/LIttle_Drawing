@@ -51,8 +51,7 @@ window.addEventListener('load', ()=>{
         //genrate tool bar
 
         const toolbar_frame = document.createElement('div')
-        toolbar_frame.classList.add = 'toolbar'
-        console.log(canvas)
+        toolbar_frame.classList.add ('toolbar')
         const body = document.querySelector('body')
         console.log(body)
         body.appendChild(toolbar_frame)
@@ -82,17 +81,25 @@ window.addEventListener('load', ()=>{
                 pen_width = slider.value
         output.innerHTML = this.value;
         console.log(this)
-        // slider for pen width
+        }// slider for pen width
 
+        let shapeTool_container = document.createElement('div')
+        toolbar_frame.appendChild(shapeTool_container)
+        let shapeTool_Name = document.createElement('h2')
+        shapeTool_container.appendChild(shapeTool_Name)
+        shapeTool_Name.innerHTML = 'ShapeTool'
         let lineTool_button = document.createElement('button')  
-        toolbar_frame.appendChild(lineTool_button)
-        lineTool_button.innerHTML = "LineTool"      
+        shapeTool_container.appendChild(lineTool_button)
+        lineTool_button.classList.add('lineTool')
+        lineTool_button.innerHTML ="LineTool"     
 
-        
+        lineTool_button.addEventListener('click',()=>{
+                console.log('lineTool on')
+        })
 
 
 
-}
+
 }
 )
 
