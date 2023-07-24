@@ -29,10 +29,10 @@ window.addEventListener('load', ()=>{
                 // I don't understand why does that help
         }
         let color
-
+        let pen_width
         function draw(e){
                 if(!painting) return;
-                ctx.lineWidth = 10
+                ctx.lineWidth = pen_width
                 ctx.lineCap = 'round'
 
                 ctx.lineTo(e.clientX, e.clientY)
@@ -59,6 +59,10 @@ window.addEventListener('load', ()=>{
         
         const color_set = ['black','red','yellow','blue','purple','green']
         
+        let color_name = document.createElement('H2')
+        color_name.innerHTML = 'Color'
+        toolbar_frame.appendChild(color_name)
+
         for(let i = 0; i < color_set.length; i++){
                 let button = document.createElement('button')
                 toolbar_frame.appendChild(button)
@@ -68,6 +72,27 @@ window.addEventListener('load', ()=>{
                         color = color_set[i]
                 })
         }
+
+        var slider = document.getElementById("myRange");
+        var output = document.getElementById("demo");
+        output.innerHTML = slider.value; // Display the default slider value
+
+        // Update the current slider value (each time you drag the slider handle)
+        slider.oninput = function() {
+                pen_width = slider.value
+        output.innerHTML = this.value;
+        console.log(this)
+        // slider for pen width
+
+        let lineTool_button = document.createElement('button')  
+        toolbar_frame.appendChild(lineTool_button)
+        lineTool_button.innerHTML = "LineTool"      
+
+        
+
+
+
+}
 }
 )
 
