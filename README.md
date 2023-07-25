@@ -10,6 +10,8 @@ I want to make a drawing board so can work with canvas better!
         change crusor shape
         line generation
         read gary document
+
+
 ## MVP
 
 Drawing table - mouse movement into strokes

@@ -94,8 +94,12 @@ window.addEventListener('load', ()=>{
         lineTool_button.innerHTML ="LineTool"     
 
         lineTool_button.addEventListener('click',()=>{
-                console.log('lineTool on')
-        })
+                ctx.beginPath();
+                ctx.moveTo(100, 100);
+                ctx.lineTo(300, 100);
+                ctx.stroke();
+            
+        }) 
 
 
 
